@@ -1,0 +1,15 @@
+name: main
+
+on: push
+
+jobs:
+  unit-tests:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        uses: php-actions/composer@v1
+      - name: Run phpunit
+        uses: php-actions/phpunit@v9
